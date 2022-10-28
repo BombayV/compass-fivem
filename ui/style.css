@@ -20,6 +20,7 @@ body {
 }
 
 .container img {
+  display: none;
   height: 18vh;
   width: auto;
   margin-right: 2rem;

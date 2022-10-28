@@ -1,9 +1,16 @@
 window.addEventListener('load', () => {
   const compass = document.getElementById('compass');
   window.addEventListener('message', (e) => {
-    if (e.data.action === 'updateRotation') {
-      // Update rotation
-      compass.style.transform = `rotate(${e.data.rotation}deg)`;
+    switch (e.data.action) {
+      case 'updateRotation':
+        compass.style.transform = `rotate(${e.data.rotation}deg)`;
+        break;
+      case 'show':
+        compass.style.display = 'block';
+        break;
+      case 'hide':
+        compass.style.display = 'none';
+        break;
     }
   });
 
